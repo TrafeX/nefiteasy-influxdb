@@ -39,6 +39,5 @@ setInterval(function() {
         });
     }).catch((e) => {
         console.error('Error', e);
-        process.exit(128);
     });
 }, 10000);

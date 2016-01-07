@@ -19,6 +19,9 @@ setInterval(function() {
             'temp_setpoint,source=nefiteasy value=' + status['temp setpoint'].toFixed(2) + '\n' +
             'temp_current,source=nefiteasy value=' + status['in house temp'].toFixed(2) + '\n' +
             'temp_outdoor,source=nefiteasy value=' + status['outdoor temp'].toFixed(2) + '\n' +
+            'ps_active,source=nefiteasy value=' + status['ps active'] + '\n' +
+            'fp_active,source=nefiteasy value=' + status['fp active'] + '\n' +
+            'boiler_indicator,source=nefiteasy value=' + boilerIndicator + '\n' +
             'boiler_indicator,source=nefiteasy value=' + boilerIndicator + '\n' +
             'pressure,source=nefiteasy value=' + pressure.pressure;
 

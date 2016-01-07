@@ -1,0 +1,17 @@
+{
+  "name": "nefiteasy",
+  "version": "1.0.0",
+  "description": "Sending Nefit Easy metrics to InfluxDB using a Docker container",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Tim de Pater <code@trafex.nl>",
+  "repository": "https://github.com/TrafeX/nefiteasy-influxdb",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "nefit-easy-commands": "^1.0.1",
+    "nefit-easy-core": "^1.0.0",
+    "request": "^2.67.0"
+  }
+}

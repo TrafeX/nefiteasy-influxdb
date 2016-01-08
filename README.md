@@ -1,7 +1,7 @@
 Publish Netfit Easy metrics to InfluxDB
 =======================================
 
-Every 10 seconds this will send the temperatures, boiler state and pressure to InfluxDB
+Every 30 seconds this will send the temperatures, boiler state and pressure to InfluxDB
 
 Usage
 -----

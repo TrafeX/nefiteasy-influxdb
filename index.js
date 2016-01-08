@@ -1,13 +1,19 @@
 const NefitEasyClient = require('nefit-easy-commands');
+const Promise         = require('bluebird');
 const client          = NefitEasyClient({
-  serialNumber : process.env.NEFIT_SERIAL_NUMBER,
-  accessKey    : process.env.NEFIT_ACCESS_KEY,
-  password     : process.env.NEFIT_PASSWORD
+    serialNumber : process.env.NEFIT_SERIAL_NUMBER,
+    accessKey    : process.env.NEFIT_ACCESS_KEY,
+    password     : process.env.NEFIT_PASSWORD
 });
 var request = require('request');
 
-setInterval(function() {
-    client.connect().then( () => {
+client.connect().then(function() {
+    console.log('Connected');
+    updateStats();
+});
+
+function updateStats() {
+   Promise.try(function() {
         return [ client.status(), client.pressure() ];
     }).spread((status, pressure) => {
 
@@ -35,9 +41,10 @@ setInterval(function() {
                 return;
             }
             console.log('Send status to InfluxDB, status: ' + response.statusCode);
-            console.log(body);
         });
     }).catch((e) => {
         console.error('Error', e);
+    }).finally(function() {
+        setTimeout(updateStats, 30000);
     });
-}, 10000);
+}

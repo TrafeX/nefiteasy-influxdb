@@ -1,5 +1,5 @@
 {
-  "name": "nefiteasy",
+  "name": "nefiteasy-influxdb",
   "version": "1.0.0",
   "description": "Sending Nefit Easy metrics to InfluxDB using a Docker container",
   "main": "index.js",

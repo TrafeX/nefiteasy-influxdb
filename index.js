@@ -14,8 +14,8 @@ client.connect().then(function() {
 
 function updateStats() {
     Promise.try(function() {
-        return [ client.status(), client.pressure() ];
-    }).spread((status, pressure) => {
+        return [ client.status(), client.pressure(), client.get('/heatingCircuits/hc1/actualSupplyTemperature') ];
+    }).spread((status, pressure, supplyTemperature) => {
 
         var centralHeating = false;
         var hotWater = false;
@@ -29,6 +29,7 @@ function updateStats() {
             'temp_setpoint,source=nefiteasy value=' + status['temp setpoint'].toFixed(2) + '\n' +
             'temp_current,source=nefiteasy value=' + status['in house temp'].toFixed(2) + '\n' +
             'temp_outdoor,source=nefiteasy value=' + status['outdoor temp'].toFixed(2) + '\n' +
+            'temp_supply,source=nefiteasy value=' + supplyTemperature['value'].toFixed(2) + '\n' +
             'ps_active,source=nefiteasy value=' + status['ps active'] + '\n' +
             'fp_active,source=nefiteasy value=' + status['fp active'] + '\n' +
             'centralheating,source=nefiteasy value=' + centralHeating + '\n' +

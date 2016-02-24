@@ -3,11 +3,14 @@ Publish Netfit Easy metrics to InfluxDB
 
 Every 30 seconds this will send the temperatures, boiler state and pressure to InfluxDB
 
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/trafex/nefiteasy-influxdb.svg)](https://hub.docker.com/r/trafex/nefiteasy-influxdb/)
+
+
 Usage
 -----
 
-    docker build -t nefiteasy .
-    docker run -it --rm --name nefiteasy -e "NEFIT_SERIAL_NUMBER=<serial number>" -e "NEFIT_ACCESS_KEY=<accesskey>" -e "NEFIT_PASSWORD=<password>" -e "INFLUXDB_URI=http://<UnfluxDB uri>:8086/write?db=nefiteasy" nefiteasy
+    docker run -d --name nefiteasy -e "NEFIT_SERIAL_NUMBER=<serial number>" -e "NEFIT_ACCESS_KEY=<accesskey>" -e "NEFIT_PASSWORD=<password>" -e "INFLUXDB_URI=http://<InfluxDB uri>:8086/write?db=nefiteasy" trafex/nefiteasy-influxdb
 
 Debugging
 ---------

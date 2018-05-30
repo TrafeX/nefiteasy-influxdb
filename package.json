@@ -11,8 +11,8 @@
   "license": "GPL-3.0",
   "dependencies": {
     "bluebird": "^3.1.1",
-    "nefit-easy-commands": "^1.4.0",
-    "nefit-easy-core": "^2.0.0",
-    "request": "^2.67.0"
+    "nefit-easy-commands": "^2.0.0",
+    "nefit-easy-core": "^3.0.0",
+    "request": "^2.87.0"
   }
 }

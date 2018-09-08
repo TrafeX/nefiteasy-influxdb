@@ -10,9 +10,9 @@
   "repository": "https://github.com/TrafeX/nefiteasy-influxdb",
   "license": "GPL-3.0",
   "dependencies": {
-    "bluebird": "^3.1.1",
-    "nefit-easy-commands": "^2.0.0",
-    "nefit-easy-core": "^3.0.0",
-    "request": "^2.87.0"
+    "bluebird": "^3.5.2",
+    "nefit-easy-commands": "^3.0.2",
+    "nefit-easy-core": "^4.0.0",
+    "request": "^2.88.0"
   }
 }

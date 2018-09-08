@@ -5,7 +5,7 @@ const client          = NefitEasyClient({
     accessKey    : process.env.NEFIT_ACCESS_KEY,
     password     : process.env.NEFIT_PASSWORD
 });
-var request = require('request');
+const request = require('request');
 
 client.connect().then(function() {
     console.log('Connected');
@@ -17,15 +17,15 @@ function updateStats() {
         return [ client.status(), client.pressure(), client.get('/heatingCircuits/hc1/actualSupplyTemperature') ];
     }).spread((status, pressure, supplyTemperature) => {
 
-        var centralHeating = false;
-        var hotWater = false;
+        let centralHeating = false;
+        let hotWater = false;
         if (status['boiler indicator'] == 'central heating') {
             centralHeating = true;
         }
         if (status['boiler indicator'] == 'hot water') {
             hotWater = true;
         }
-        body =
+        const body =
             'temp_setpoint,source=nefiteasy value=' + status['temp setpoint'].toFixed(2) + '\n' +
             'temp_current,source=nefiteasy value=' + status['in house temp'].toFixed(2) + '\n' +
             'temp_outdoor,source=nefiteasy value=' + status['outdoor temp'].toFixed(2) + '\n' +

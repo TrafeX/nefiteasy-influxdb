@@ -68,9 +68,9 @@ bluebird@^3.5.1:
   version "3.5.1"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
 
-bluebird@^3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.2.tgz#1be0908e054a751754549c270489c1505d4ab15a"
+bluebird@^3.5.5:
+  version "3.5.5"
+  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.5.tgz#a8d0afd73251effbbd5fe384a77d73003c17a71f"
 
 browser-request@^0.3.3:
   version "0.3.3"
@@ -296,9 +296,9 @@ ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
-nefit-easy-commands@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/nefit-easy-commands/-/nefit-easy-commands-3.0.2.tgz#f9c08b164755b8dce8dfb3db679aac93d2c51724"
+nefit-easy-commands@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/nefit-easy-commands/-/nefit-easy-commands-3.0.4.tgz#3e5847fdbd7bafe510b0c51d3fdf73916e3d4e63"
   dependencies:
     bluebird "^3.5.1"
     nefit-easy-core "^4.0.0"

@@ -8,10 +8,10 @@
   },
   "author": "Tim de Pater <code@trafex.nl>",
   "repository": "https://github.com/TrafeX/nefiteasy-influxdb",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "dependencies": {
-    "bluebird": "^3.5.2",
-    "nefit-easy-commands": "^3.0.2",
+    "bluebird": "^3.5.5",
+    "nefit-easy-commands": "^3.0.4",
     "nefit-easy-core": "^4.0.0",
     "request": "^2.88.0"
   }

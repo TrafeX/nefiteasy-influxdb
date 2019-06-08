@@ -1,28 +1,28 @@
 const NefitEasyClient = require('nefit-easy-commands');
 const Promise         = require('bluebird');
+const request = require('request');
 const client          = NefitEasyClient({
     serialNumber : process.env.NEFIT_SERIAL_NUMBER,
     accessKey    : process.env.NEFIT_ACCESS_KEY,
     password     : process.env.NEFIT_PASSWORD
 });
-const request = require('request');
 
 client.connect().then(function() {
     console.log('Connected');
     updateStats();
 });
 
-function updateStats() {
-    Promise.try(function() {
+const updateStats = () => {
+    Promise.try(() => {
         return [ client.status(), client.pressure(), client.get('/heatingCircuits/hc1/actualSupplyTemperature') ];
     }).spread((status, pressure, supplyTemperature) => {
 
         let centralHeating = false;
         let hotWater = false;
-        if (status['boiler indicator'] == 'central heating') {
+        if (status['boiler indicator'] === 'central heating') {
             centralHeating = true;
         }
-        if (status['boiler indicator'] == 'hot water') {
+        if (status['boiler indicator'] === 'hot water') {
             hotWater = true;
         }
         const body =
@@ -40,7 +40,7 @@ function updateStats() {
             method: 'POST',
             uri: process.env.INFLUXDB_URI,
             body: body
-        }, function (error, response, body) {
+        }, (error, response, body) => {
             if (error) {
                 console.error('Request Error: ' + error);
                 return;
@@ -49,7 +49,7 @@ function updateStats() {
         });
     }).catch((e) => {
         console.error('Error', e);
-    }).finally(function() {
+    }).finally(() => {
         setTimeout(updateStats, 30000);
     });
-}
+};
